@@ -16,7 +16,7 @@ The generate_doc function creates several lines of randomness, but we know the f
 
 This has to do with AES ECB encryption. In this mode, the same output is supplied every time the same input is provided. This means that we can encrypt our input and compare it to the output to look for a match. Other writeups have covered this attack in depth, so I'll just provide the python I used.
 
-The solver script finishes when '*' characters get printed out. Apologies for not really making it a malleable script.
+The solver finishes when '*' characters get printed out. Apologies for not really making it a malleable script.
 
 ## Headpiece Silver
 

